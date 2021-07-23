@@ -17,7 +17,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class CreatePersonDTO {
+public class PersonDTO {
 
     private static ObjectMapper objectMapper;
 
@@ -45,5 +45,5 @@ public class CreatePersonDTO {
 
     @Valid
     @NotEmpty
-    private List<CreatePhoneDTO> phones;
+    private List<PhoneDTO> phones;
 }

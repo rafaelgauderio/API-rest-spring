@@ -6,7 +6,7 @@ import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-public class CreatePhoneDTO {
+public class PhoneDTO {
 
     @Enumerated(EnumType.STRING)
     private PhoneType phoneType;
