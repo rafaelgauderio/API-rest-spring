@@ -50,6 +50,10 @@ public class PersonController {
         personService.delete(id);
     }
 
+    @PostMapping("{id}")
+    public SucessMessageDTO updateById(@PathVariable Long id, @RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {
+        return personService.updateById(id, personDTO);
+    }
 
 
 }
