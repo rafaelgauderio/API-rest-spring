@@ -6,6 +6,7 @@ import com.rafaeldeluca.personapi.dto.request.PersonDTO;
 import com.rafaeldeluca.personapi.dto.response.SucessMessageDTO;
 import com.rafaeldeluca.personapi.dto.mapper.PersonMapper;
 import com.rafaeldeluca.personapi.exception.PersonNotFoundException;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,23 +15,22 @@ import java.util.stream.Collectors;
 
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
-    private PersonRepository personRepository;
+    private final PersonRepository personRepository;
 
-    private  PersonMapper personMapper;
+    private  final PersonMapper personMapper;
 
-    @Autowired
-    public PersonService(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
+
 
     public SucessMessageDTO createPerson(PersonDTO personDTO) {
         Person personToSave = personMapper.toModel(personDTO);
 
         Person savedPerson = personRepository.save(personToSave);
 
-        return createMessageResponse(savedPerson.getId(),"Create person with this ID: ");
+        SucessMessageDTO messageResponse =  createMessageResponse(savedPerson.getId(),"Create person with this ID: ");
+        return messageResponse;
 
     }
 
