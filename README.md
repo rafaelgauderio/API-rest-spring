@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 Desenvolvimento de exercício de criação de um API REST com String boot
 
->>>>>>> c57a28fed042d71a3ae20af01800888476cb4144
 Troquei a porta padrão do projeto porque ficava dando conflito com outros
 projeto da porta 8080.
 Esta usando a porta 8585
@@ -19,15 +16,14 @@ Maven 3.6.3 ou versões superiores.
 Intellj IDEA Community Edition ou sua IDE favorita.  
 Controle de versão GIT instalado na sua máquina.  
 Conta no GitHub para o armazenamento do seu projeto na nuvem.  
-<<<<<<< HEAD
 Conta no Heroku para o deploy do projeto na nuvem
 
 Links com os tutorias sobre obre tópicos mencionados durante a aula:
-=======
+
 Conta no Heroku para o deploy do projeto na nuvem  
 
 Links com os tutorias sobre obre tópicos mencionados durante a aula:  
->>>>>>> c57a28fed042d71a3ae20af01800888476cb4144
+
 
 SDKMan! para gerenciamento e instalação do Java e Maven  
 Referência do Intellij IDEA Community, para download  
@@ -40,9 +36,3 @@ Site oficial do GitHub
 Documentação oficial do Lombok  
 Documentação oficial do Map Struct  
 Referência para o padrão arquitetural REST  
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> c57a28fed042d71a3ae20af01800888476cb4144
