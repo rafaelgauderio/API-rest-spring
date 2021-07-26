@@ -16,16 +16,18 @@ import java.util.stream.Collectors;
 
 
 @Service
+
 public class PersonService {
 
     private PersonRepository personRepository;
 
-    private  PersonMapper personMapper;
+    private PersonMapper personMapper;
 
     @Autowired
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
+
 
     public SucessMessageDTO createPerson(PersonDTO personDTO) {
         Person personToSave = personMapper.toModel(personDTO);
