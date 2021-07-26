@@ -1,6 +1,6 @@
-package one.digitalinnovation.personapi.dto.request;
+package com.rafaeldeluca.personapi.dto.request;
 
-import one.digitalinnovation.personapi.enums.PhoneType;
+import com.rafaeldeluca.personapi.enums.PhoneType;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;

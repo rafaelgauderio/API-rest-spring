@@ -1,22 +1,20 @@
-package one.digitalinnovation.personapi.services;
+package com.rafaeldeluca.personapi.services;
 
+import com.rafaeldeluca.personapi.entities.Person;
+import com.rafaeldeluca.personapi.repositories.PersonRepository;
+import com.rafaeldeluca.personapi.dto.request.PersonDTO;
+import com.rafaeldeluca.personapi.dto.response.SucessMessageDTO;
+import com.rafaeldeluca.personapi.dto.mapper.PersonMapper;
+import com.rafaeldeluca.personapi.exception.PersonNotFoundException;
 import lombok.AllArgsConstructor;
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.dto.response.SucessMessageDTO;
-import one.digitalinnovation.personapi.entities.Person;
-import one.digitalinnovation.personapi.dto.mapper.PersonMapper;
-import one.digitalinnovation.personapi.exception.PersonNotFoundException;
-import one.digitalinnovation.personapi.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 
 @Service
-
 public class PersonService {
 
     private PersonRepository personRepository;
@@ -34,7 +32,8 @@ public class PersonService {
 
         Person savedPerson = personRepository.save(personToSave);
 
-        return createMessageResponse(savedPerson.getId(),"Create person with this ID: ");
+        SucessMessageDTO messageResponse =  createMessageResponse(savedPerson.getId(),"Create person with this ID: ");
+        return messageResponse;
 
     }
 
