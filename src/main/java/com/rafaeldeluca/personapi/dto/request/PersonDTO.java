@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi.dto.request;
+package com.rafaeldeluca.personapi.dto.request;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

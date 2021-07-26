@@ -1,17 +1,15 @@
-package one.digitalinnovation.personapi.services;
+package com.rafaeldeluca.personapi.services;
 
-import lombok.AllArgsConstructor;
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.dto.response.SucessMessageDTO;
-import one.digitalinnovation.personapi.entities.Person;
-import one.digitalinnovation.personapi.dto.mapper.PersonMapper;
-import one.digitalinnovation.personapi.exception.PersonNotFoundException;
-import one.digitalinnovation.personapi.repositories.PersonRepository;
+import com.rafaeldeluca.personapi.entities.Person;
+import com.rafaeldeluca.personapi.repositories.PersonRepository;
+import com.rafaeldeluca.personapi.dto.request.PersonDTO;
+import com.rafaeldeluca.personapi.dto.response.SucessMessageDTO;
+import com.rafaeldeluca.personapi.dto.mapper.PersonMapper;
+import com.rafaeldeluca.personapi.exception.PersonNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 

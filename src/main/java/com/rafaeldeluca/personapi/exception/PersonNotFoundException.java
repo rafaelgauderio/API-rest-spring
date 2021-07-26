@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi.exception;
+package com.rafaeldeluca.personapi.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

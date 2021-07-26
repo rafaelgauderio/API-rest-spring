@@ -1,10 +1,9 @@
-package one.digitalinnovation.personapi.dto.mapper;
+package com.rafaeldeluca.personapi.dto.mapper;
 
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.entities.Person;
+import com.rafaeldeluca.personapi.dto.request.PersonDTO;
+import com.rafaeldeluca.personapi.entities.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface PersonMapper {
