@@ -1,13 +1,21 @@
 package com.rafaeldeluca.personapi.controller;
 
 import com.rafaeldeluca.personapi.dto.request.PersonDTO;
+import com.rafaeldeluca.personapi.dto.response.MessageResponseDTO;
 import com.rafaeldeluca.personapi.services.PersonService;
-import com.rafaeldeluca.personapi.dto.response.SucessMessageDTO;
 import com.rafaeldeluca.personapi.exception.PersonNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 
 import javax.validation.Valid;
@@ -18,12 +26,12 @@ import java.util.List;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonController {
 
-    private final PersonService personService;
+    private PersonService personService;
 
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public SucessMessageDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
+    public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
 
         return personService.createPerson(personDTO);
     }
@@ -46,7 +54,8 @@ public class PersonController {
     }
 
     @PostMapping("{id}")
-    public SucessMessageDTO updateById(@PathVariable Long id, @RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {
+    @ResponseStatus(HttpStatus.OK)
+    public MessageResponseDTO updateById(@PathVariable Long id, @RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {
         return personService.updateById(id, personDTO);
     }
 

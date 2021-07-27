@@ -1,11 +1,9 @@
 package com.rafaeldeluca.personapi.dto.request;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.Valid;
@@ -15,18 +13,15 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PersonDTO {
 
-    private static ObjectMapper objectMapper;
 
-    static {
-        objectMapper = new ObjectMapper();
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-        objectMapper.registerModules(new JavaTimeModule());
-    }
+    private Long id;
+
 
     @NotEmpty
     @Size(min = 2, max = 60)
